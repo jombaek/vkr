@@ -14,7 +14,7 @@ function StepsScreen(props) {
     // const [isPedometerAvailable, setIsPedometerAvailable] = useState("checking");
     const { currentUser } = props;
     const [pastStepCount, setPastStepCount] = useState(0);
-    const [count, setCount] = useState(4);
+    const [count, setCount] = useState(0);
     const [crouchKey, setCrouchKey] = useState(false);
     const [validCoinsForToday, setValidCoinsForToday] = useState(1);
 
@@ -41,7 +41,6 @@ function StepsScreen(props) {
             if (!crouchKey) {
                 setCrouchKey(true)
                 setCount(Math.floor(pastStepCount / 100));
-                console.log(31);
             }
         },
         (error) => {

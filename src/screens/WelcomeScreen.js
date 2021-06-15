@@ -27,7 +27,7 @@ export default function WelcomeScreen({ navigation }) {
       </View>
       <View style={styles.logoContainer}>
         <Image source={require('../../assets/flame.png')} style={styles.logo} />
-        <Text style={styles.subtitle}>Шагомер</Text>
+        <Text style={styles.subtitle}>CoinWalk</Text>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton title="Войти" onPress={() => navigation.navigate('Login')} />
