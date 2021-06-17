@@ -8,7 +8,7 @@ import AppUserStack from './AppUserStack';
 import { AuthUserContext } from './AuthUserProvider';
 import Spinner from '../../components/Spinner';
 
-export default function Routes() {
+export default function Routers() {
   const { user, setUser } = useContext(AuthUserContext);
   const [isLoading, setIsLoading] = useState(true);
 
