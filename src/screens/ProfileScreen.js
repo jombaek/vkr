@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import UserAvatar from 'react-native-user-avatar';
 
+import useStatusBar from '../../hooks/useStatusBar';
 import Colors from '../res/colors';
 
 const getFirstLetter = (text) => {
@@ -10,6 +11,8 @@ const getFirstLetter = (text) => {
 }
 
 function ProfileScreen(props) {
+    useStatusBar('dark-content');
+
     const { currentUser } = props;
 
     return (

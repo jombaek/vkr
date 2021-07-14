@@ -8,9 +8,12 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import { getTotalCoins, setNewTotalCoins } from '../../components/Firebase/firebase';
+import useStatusBar from '../../hooks/useStatusBar';
 import Colors from '../res/colors';
 
 function StepsScreen(props) {
+    useStatusBar('dark-content');
+    
     // const [isPedometerAvailable, setIsPedometerAvailable] = useState("checking");
     const { currentUser } = props;
     const [pastStepCount, setPastStepCount] = useState(0);
@@ -23,7 +26,7 @@ function StepsScreen(props) {
     
     let currentCoins;
     let totalCoins = 0;
-    let newTotalCoins = 0;
+    let newTotalCoins = 52;
 
     // var dateStart = moment().startOf('day').toDate();
     // var dateNow = moment();
@@ -60,7 +63,6 @@ function StepsScreen(props) {
             Pedometer.getStepCountAsync(start, moment().toDate()).then(
                 (pastResult) => {
                     setPastStepCount(pastResult.steps);
-                    console.log(pastStepCount);
                     setCount(Math.floor(pastStepCount / 100));
                 },
                 (error) => {

@@ -3,9 +3,12 @@ import { View, Text, StyleSheet, Modal, Pressable, TouchableOpacity, ImageBackgr
 import { connect } from 'react-redux';
 
 import { addCode } from '../../components/Firebase/firebase';
+import useStatusBar from '../../hooks/useStatusBar';
 import Colors from '../res/colors';
 
 export default function PartnersScreen() {
+    useStatusBar('dark-content');
+
     const [generateRandomNumber, setGenerateRandomNumber] = useState(0);
     const [modalVisible, setModalVisible] = useState(false);
 
